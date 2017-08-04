@@ -203,17 +203,13 @@ padding:0px;
 
 .logo .name{
 display:inline-block;
-height:140px;
-width:140px;
+height:100%;
+width:100%;
 font-weight:700;
 text-align:center;
-background:#f4ebd2;
 line-height:20px;
-color:#504219;
+color:#2f76d6;
 font-size:25px;
-border-radius:100px;
-border:5px solid #2f76d6;
-box-shadow:0px 0px 5px #000;
 padding-top:15px;
 margin:0 auto;
 }
@@ -257,7 +253,7 @@ text-align:center;
 }
 
 .lnav a, .lnav a:visited, .rnav a, .rnav a:visited{
-margin:0px 8px;
+/*margin:0px 8px;
 color:#2f76d6;
 border:none;
 font-size:20px;
@@ -268,16 +264,21 @@ line-height:50px;
 -webkit-transition: color 0.8s ease;
 -moz-transition: color 0.8s ease;
 -o-transition: color 0.8s ease;
-transition: color 0.8s ease;
+transition: color 0.8s ease;*/
+
+visibility:none;
 }
 
 .lnav a:hover, .rnav a:hover{
+	/*
 border:none;
 color:#eb1a39;
 -webkit-transition: color 0.8s ease;
 -moz-transition: color 0.8s ease;
 -o-transition: color 0.8s ease;
-transition: color 0.8s ease;
+transition: color 0.8s ease; */
+
+visibility:none;
 }
 
 /* Main */
