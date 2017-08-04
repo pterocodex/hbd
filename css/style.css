@@ -266,7 +266,7 @@ line-height:50px;
 -o-transition: color 0.8s ease;
 transition: color 0.8s ease;*/
 
-visibility:none;
+display:none;
 }
 
 .lnav a:hover, .rnav a:hover{
@@ -278,7 +278,7 @@ color:#eb1a39;
 -o-transition: color 0.8s ease;
 transition: color 0.8s ease; */
 
-visibility:none;
+display:none;
 }
 
 /* Main */
