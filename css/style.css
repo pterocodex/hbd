@@ -90,7 +90,7 @@ height:20px;
 /* Use this class to add Pink color to text */
 
 .color,strong{
-color:#ff405c;
+color:#2f76d6;
 }
 
 /* Use this class to make text uppercase */
@@ -258,7 +258,7 @@ text-align:center;
 
 .lnav a, .lnav a:visited, .rnav a, .rnav a:visited{
 margin:0px 8px;
-color:#ff405c;
+color:#2f76d6;
 border:none;
 font-size:20px;
 font-weight:700;
@@ -495,7 +495,7 @@ margin:10px 0px;
 /* Blog */
 
 .entry h3 a, .entry h3 a:visited, 
-.entry h3 a:hover{ color:#ff405c; }
+.entry h3 a:hover{ color:#2f76d6; }
 .entry p{
 	font-family: 'Open Sans', sans-serif;
 	font-size:13px;
@@ -510,7 +510,7 @@ font-family:Tahoma, Verdana, sans-serif;
 }
 
 .entry .meta i, .comments .c-meta i{
-	color:#ff405c;
+	color:#2f76d6;
 	font-size:14px;
 	margin:0px 3px;
 }
