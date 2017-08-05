@@ -133,7 +133,7 @@ font-weight:bold;
 .social img{ margin-right:5px; }
 .bot-bor{ border-bottom:1px dashed #eaddb5; }
 
-.CardFront {
+#CardFront {
 	position: fixed;
     width: 100%;
     height: 100%;
@@ -191,7 +191,7 @@ background: #eb1a39;
 background: #eb1a39; 
 }
 
-.container{
+#container2{
 	width:1000px;
 }
 
