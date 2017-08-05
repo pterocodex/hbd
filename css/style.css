@@ -133,6 +133,12 @@ font-weight:bold;
 .social img{ margin-right:5px; }
 .bot-bor{ border-bottom:1px dashed #eaddb5; }
 
+.CardFront {
+	height: 100%;
+	width: 100%;
+	margin: 0px 0px;
+}
+
 a, a:visited{
 color:#eae0c2;
 border-bottom:1px dashed #eaddb5;
