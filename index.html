@@ -1,448 +1,1177 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<!-- Title here -->
-		<title>Happy Birthday ♥</title>
-		<!-- Description, Keywords and Author -->
-		<meta name="description" content="Your description">
-		<meta name="keywords" content="Your,Keywords">
-		<meta name="author" content="ResponsiveWebInc">
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<!-- Styles -->
-		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<!-- FlexSlider CSS -->
-		<link href="css/flexslider.css" rel="stylesheet">
-		<!-- Isotope and Pretty Photo CSS -->
-		<link href="css/isotype.css" rel="stylesheet" >
-		<link href="css/prettyPhoto.css" rel="stylesheet">
-		<!-- Font awesome CSS -->
-		<link href="css/font-awesome.min.css" rel="stylesheet">		
-		<!-- Custom CSS -->
-		<link href="css/slideshow.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="#">
-	</head>
-	
-	<body>
-			<script>
-function OpenCard() {
-    var x = document.getElementById('container2');
-	var y = document.getElementById('CardFront');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-		y.style.display = 'none';
-    } else {
-        x.style.display = 'none';
-		y.style.display = 'block';
-    }
+
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+@import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave');
+
+body{
+	background:url('../img/back.png') repeat;
+	padding-top:30px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color:#f4ebd2;
+	font-size:25px;
+	/*line-height:35px;*/
+	-webkit-font-smoothing: antialiased;
 }
-</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(function() {
-$('.fadein img:gt(0)').hide();
+h1,h2,h3,h4,h5,h6{
+font-weight:700;
+text-shadow:-1px -1px 1px #000;
+font-family: 'Open Sans Condensed', sans-serif;
+margin:5px 0px;
+padding:5px 0px;
+}
 
-setInterval(function () {
-    $('.fadein :first-child').fadeOut()
-                             .next('img')
-                             .fadeIn()
-                             .end()
-                             .appendTo('.fadein');
-}, 4000); // 4 seconds
-});
-</script>
+h1{
+font-size:70px;
+line-height:75px;
+text-transform:uppercase;
+}
 
-<div class="fadein">
-    <img src="Travis-Sunset.png">
-    <img src="Travis-Lotus.png">
-    <img src="Travis-Firebird.png">
-    <img src="Travis-Duskhaven-Symbol.png">
-    <img src="Shield-from-Chaos.png">
-</div>
+h2{
+font-size:40px;
+line-height:50px;
+text-transform:uppercase;
+}
+
+h3{
+font-size:30px;
+line-height:35px;
+}
+
+h4{
+font-size:25px;
+line-height:30px;
+}
+
+h5{
+font-size:20px;
+line-height:25px;
+}
+
+h6{
+font-size:15px;
+line-height:20px;
+}
+
+form *{ font-family: 'Open Sans', sans-serif; }
+
+.fadein {
+    position:fixed;
+    width: 100%; 
+	height: 100%; 
+}
+
+.fadein img {
+    position:fixed;
+    left:0;
+    top:0;
+	width: 100%;
+	height: 100%;
+	margin: 0% 0%;
+	opacity: 0.1;
+}
+
+a:hover,a:focus,a:active{
+	outline: 0;
+}
+
+:focus {
+	outline:none;
+}
+
+::-moz-focus-inner {
+	border:0;
+}
+
+/* Theme button */
+
+.btn-theme, .btn-theme:active,
+.btn-theme:hover {
+	background: #de0f2e;
+	color: #fff !important;
+	border: 1px solid transparent;
+	font-family: 'Open Sans', sans-serif; 
+}
+
+.btn-theme:hover { background: #c90321 !important; }
+
+/* Important Shortcode Classes */
+
+/* Use this class to add space between two elements. */
+
+.border{
+height:20px;
+}
+
+/* Use this class to add Pink color to text */
+
+.color,strong{
+color:#2f76d6;
+}
+
+/* Use this class to make text uppercase */
+
+.caps{
+text-transform:uppercase;
+}
+
+/* Use this class to make the font into Open Sans */
+
+.arial{ font-family: 'Open Sans', sans-serif; }
+
+/* Use this class to make the font size small */
+
+.small{
+font-size:13px;
+line-height:20px;
+}
+
+/* Use this class to make the font size medium */
+
+.medium{
+font-size:22px;
+line-height:30px;
+}
+
+/* Use this class to make the font size bold */
+
+.bold{
+font-size:14px;
+line-height:20px;
+font-weight:bold;
+}
+
+.right-p{
+	margin-top:3px;
+}
+
+.padd{ padding:10px; }
+.social img{ margin-right:5px; }
+.bot-bor{ border-bottom:1px dashed #eaddb5; }
+
+#CardFront {
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51,51,51,0.7);
+    z-index: 10;
+}
+
+a, a:visited{
+color:#eae0c2;
+border-bottom:1px dashed #eaddb5;
+}
+
+a:hover{
+color:#eaddb5;
+border-bottom:none;
+text-decoration:none;
+}
+
+ul{
+list-style-type:none;
+margin-left:0px;
+margin:10px 0px 10px 0px;
+}
+
+ul li{
+padding:3px 0px;
+margin:3px 0px;
+line-height:30px;
+}
+
+a:active, a:focus { 
+border:none;
+outline:none;
+}
+
+a:-moz-any-link:focus { 
+outline:none; 
+}
+
+hr{
+height:6px;
+background:url('../img/bor.png') repeat-x;
+margin:10px 0px;
+padding:5px 0px;
+border:0px;
+}
+
+.speech-bubble {
+	position: inherit;
+	background: #fef5e5;
+	width:25%;
+	margin: 10% 25%;
+	text-align: center;
+	padding: 5px;
+	color: #7c1b03;
+	font-family: 'Sedgwick Ave', cursive;
+	font-size: 36pt;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 30px solid transparent;
+	border-left-color: #fef5e5;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -15px;
+	margin-right: -30px;
+}
+
+::selection {
+background: #eb1a39; 
+}
+
+::-moz-selection {
+background: #eb1a39; 
+}
+
+#container2{
+	width:100%;
+	display: none;
+	padding: 0% 10%;
+}
+
+/* Header */
+
+header{
+margin:20px 0px;
+}
+
+/* Logo */
+
+.logo{
+margin-top:-30px;
+text-align:center;
+}
+
+.logo p{
+padding:0px;
+}
+
+.logo .name{
+display:inline-block;
+font-weight:700;
+text-align:center;
+color:#2f76d6;
+font-size:65px;
+padding-top:15px;
+margin:0 auto;
+font-family: 'Open Sans Condensed', sans-serif;
+text-transform: uppercase;
+}
+
+.logo .name a, .logo .name a:visited{
+color:#504219;
+border:none;
+}
+
+.logo .name a:hover{
+color:#30270d;
+-webkit-transition: color 0.8s ease;
+-moz-transition: color 0.8s ease;
+-o-transition: color 0.8s ease;
+transition: color 0.8s ease;
+}
+
+.logo .namey{
+padding:10px 0px 0px 0px;
+}
+
+.logo .namey b{
+border-top:1px dashed #d2c49d;
+border-bottom:1px dashed #d2c49d;
+padding:5px 0px;
+}
+
+.logo i{
+font-size:10px;
+text-align:center;
+}
+
+/* Navigation */
+
+.lnav{
+text-align:center;
+}
+
+.rnav{
+text-align:center;
+}
+
+.lnav a, .lnav a:visited, .rnav a, .rnav a:visited{
+/*margin:0px 8px;
+color:#2f76d6;
+border:none;
+font-size:20px;
+font-weight:700;
+text-shadow:-1px -1px 1px #000;
+border-bottom:1px dashed #f4ebd2;
+line-height:50px;
+-webkit-transition: color 0.8s ease;
+-moz-transition: color 0.8s ease;
+-o-transition: color 0.8s ease;
+transition: color 0.8s ease;*/
+
+display:none;
+}
+
+.lnav a:hover, .rnav a:hover{
+	/*
+border:none;
+color:#eb1a39;
+-webkit-transition: color 0.8s ease;
+-moz-transition: color 0.8s ease;
+-o-transition: color 0.8s ease;
+transition: color 0.8s ease; */
+
+display:none;
+}
+
+/* Main */
+
+.hero{
+text-align:center;
+}
+
+.rounds{
+margin:10px 0px;
+}
+
+.rounds a, .rounds a:visited{
+text-align:center;
+border:none;
+color:#f4ebd2;
+font-weight:700;
+font-size:23px;
+text-shadow:0px 0px 1px #000;
+text-transform:uppercase;
+}
+
+.round{
+margin:10px 10px;
+display:inline-block;
+border:5px solid #f4ebd2;
+line-height:120px;
+height:130px;
+width:130px;
+text-align:center;
+background-color:#de0f2e;
+border-radius:100px;
+box-shadow:0px 0px 5px #000;
+-webkit-transition: background-color 1s ease;
+-moz-transition: background-color 1s ease;
+-o-transition: background-color 1s ease;
+transition: background-color 1s ease;
+}
+
+.round:hover{
+background-color: #c10622;
+-webkit-transition: background-color 1s ease;
+-moz-transition: background-color 1s ease;
+-o-transition: background-color 1s ease;
+transition: background-color 1s ease;
+}
+
+/* FlexSlider */
+
+.flexslider{
+	border:0px;
+	box-shadow:none;
+	background:none;
+	margin:0px;
+}
+
+/* Slide One */
+
+.flexslider li.slide-one{
+	background:#fff url(../img/slider/slide1.jpg) repeat;
+}
+
+.flexslider li.slide-one .slide-content{
+	padding:80px;
+}
+
+.flexslider .slide-one-content h3{
+	font-size:41px;
+	line-height:58px;
+	font-weight:300;
+	font-family: 'Open Sans', sans-serif;
+	text-shadow:none;
+}
+
+.flexslider .slide-one-content h3 span{
+	padding:0px 16px;
+	display:inline-block;
+	background:#eb1a39;
+}
+
+.flexslider .slide-one-content p{
+	font-size:16px;
+	margin-top:15px;
+	margin-bottom:15px;
+	line-height:25px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.flexslider .slide-one-img img{
+	max-width:450px;
+}	
+
+/* Slide Two */
+
+.flexslider li.slide-two{
+	background:#fff url(../img/slider/slide2.jpg) repeat;
+}
+
+.flexslider li.slide-two .slide-content{
+	padding:75px;
+	text-align:center;
+}
+
+.flexslider li.slide-two .slide-content h3{
+	font-size:50px;
+	line-height:58px;
+	font-weight:300;
+	font-family: 'Open Sans', sans-serif;
+	text-shadow:none;
+}
+
+.flexslider li.slide-two .slide-content h3 span{
+	padding:0px 17px 4px;
+	background:#eb1a39;
+} 
+
+.flexslider li.slide-two .slide-content p{
+	font-size:26px;
+	line-height:45px;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing:4px;
+	margin-top:20px;
+	margin-bottom:20px;
+	font-weight:600;
+	color:#fff;
+}
+
+.flex-direction-nav a{
+	border-bottom:0px;
+	width:40px;
+	height:40px;
+	line-height:38px;
+	border-radius:50px;
+	color:#fff;
+	background:#222;
+	margin:0px;
+	top:44%;
+	text-align:center;
+}
 
 
-	<div id="CardFront" onclick="OpenCard()">
-		<div class="speech-bubble">
-			Touch me bby.
-		</div>
-		<img src="GenjiRender2.png" onclick="OpenCard()">
-	</div>
+.flex-direction-nav a:before{
+	font-size:20px !important;
+}
+
+.flex-direction-nav .flex-prev{
+	left:10px !important; 
+}
+
+.flex-direction-nav .flex-next{
+	text-align:center;
+	right:10px !important;
+}
+
+/* All */
+
+.widget{
+	font-family: 'Open Sans', sans-serif;
+	font-size:13px;
+}
+
+.widget h3, .widget h4, .widget h5{
+font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.widget ul a{
+font-weight:700;
+border:none;
+}
+
+.widget ul{
+	margin:0px;
+	padding:0px;
+}
+
+.widget ul a:hover{
+color:#e0d599;
+}
+
+.widget ul li{
+margin:0px;
+padding:5px 0px;
+line-height:20px !important;
+border-bottom:1px dashed #444;
+}
+
+.widget ul li i{
+	display: inline-block;
+	margin-right: 3px;
+	font-size: 10px;
+}
+
+.pics{
+margin:10px 0px;
+}
+
+.pics img{
+	width: 100%;
+	max-width: 195px;
+	margin:10px 10px 10px 0px;
+	padding: 3px;
+	background:#fff;
+	border:1px solid #000;
+	border-radius: 6px;
+	box-shadow:0px 0px 5px #000;
+}
+
+.pics a, 
+.pics a:visited{ border:none; }
+
+/* CTA */
+
+.cta h2{ font-size:35px; }
+
+/* Blog */
+
+.entry h3 a, .entry h3 a:visited, 
+.entry h3 a:hover{ color:#2f76d6; }
+.entry p{
+	font-family: 'Open Sans', sans-serif;
+	font-size:13px;
+	line-height:20px;
+}
+
+.entry .meta{
+padding:5px 0px;
+text-transform:uppercase;
+font-size:12px;
+font-family:Tahoma, Verdana, sans-serif;
+}
+
+.entry .meta i, .comments .c-meta i{
+	color:#2f76d6;
+	font-size:14px;
+	margin:0px 3px;
+}
+
+.entry img{
+	margin-top: 5px;
+	margin-bottom: 15px;
+	padding: 3px;
+}
+
+.comments{
+	font-family: 'Open Sans', sans-serif;
+	font-size:13px;
+	line-height:20px;
+}
+
+.comments label, .comments input, 
+.comments textarea, .comments button{ font-size:13px; }
+.comments .form{ margin-top:20px; }
+.comment-list{ margin-bottom:20px; }
+.comment-entry{
+	background:#222;
+	padding: 14px 16px;
+	margin:10px 0;
+	border-radius: 3px;
+}
+
+.comment-entry .avatar {
+	max-width: 100px;
+	float: left;
+	border: 2px solid #fff;
+	border-radius: 4px;
+}
+
+.comment-entry .c-author, .comment-entry .c-meta, 
+.comment-entry .comment { margin-left: 115px; } 
+
+.c-reply{ margin-left:30px; }
+.c-author h6{
+	margin-top: 0;
+	padding: 0;
+	font-size: 14px;
+}
+
+.c-meta{
+font-size:11px;
+color:#eee;
+padding:5px 0px;
+text-transform:uppercase;
+}
+
+/* About */
+
+.staffs { text-align: center; }
+.staffs .about-pic {
+	margin-top: 30px; 
+	margin-bottom: 10px;
+}
 	
+.staffs .about-pic img{
+	background:#fff;
+	padding:3px;
+	border:1px solid #000;
+	border-radius: 6px;
+	box-shadow:0px 0px 3px #000;
+}
+
+.staffs .about-social a,
+.staffs .about-social a:visited,
+.staffs .about-social a:hover{ border:none; }
+.staffs .about-social i{
+	display:inline-block;
+	width:35px;
+	height:35px;
+	background:#de0f2e;
+	border:2px solid #f4ebd2;
+	border-radius:100px;
+	font-size:15px;
+	line-height:31px;
+	text-align:center;
+	box-shadow:inset 0px 0px 2px #000;
+	-webkit-transition: background 1s ease;
+	-moz-transition: background 1s ease;
+	-o-transition: background 1s ease;
+	transition: background 1s ease;
+}
+
+.staffs .about-social i:hover{ background:#b40b24; }
+
+/* Jobs */
+
+.panel {
+	background: transparent;
+}
+.panel-group .panel-heading+.panel-collapse .panel-body { border: 0; }
+.panel-body{ padding: 0; }
+
+.panel-group{
+border-radius:0px;
+border:none;
+margin:10px 0px;
+}
+
+.panel-heading {
+display: block;
+padding:0px;
+}
+
+.accordion-inner{
+	border:none;
+	font-family: 'Open Sans', sans-serif;
+	font-size:13px;
+	line-height:20px;
+	padding:0px;
+	background:#222;
+	padding:10px;
+	border-radius:10px;
+	border:1px solid #111;
+}
+
+.panel li{ line-height:20px; }
+.panel-heading a, .panel-heading a:visited,
+.panel-heading a:hover{ border:none; }
+
+/* Contact us */
+
+.contactus label{
+	font-family: 'Open Sans', sans-serif;
+	font-size:13px !important;
+}
+
+.contactus .form{ margin-top:14px; }
+.contactus input, .contactus textarea,
+.contactus button{ font-size:13px !important; }
+.contactus .gmap {
+	margin-top:15px;
+	height: 250px;
+	border: 1px solid #aaa;
+	overflow: hidden;
+}
+
+.contactus .gmap iframe{
+	width:100%;
+	height: 100%;
+	border: 0;
+}
+
+.contactus .address{
+	font-family: 'Open Sans', sans-serif;
+	font-size:13px;
+	line-height:18px;
+}
+
+/* Portfolio */
+
+.img-portfolio ul{
+   margin:0;
+   padding:0;
+}
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+   z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+   pointer-events: none;
+   z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+   -webkit-transition-duration: 0.8s;
+   -moz-transition-duration: 0.8s;
+   -ms-transition-duration: 0.8s;
+   -o-transition-duration: 0.8s;
+   transition-duration: 0.8s;
+}
+
+.isotope {
+   -webkit-transition-property: height, width;
+   -moz-transition-property: height, width;
+   -ms-transition-property: height, width;
+   -o-transition-property: height, width;
+   transition-property: height, width;
+}
+
+.isotope .isotope-item {
+   -webkit-transition-property: -webkit-transform, opacity;
+   -moz-transition-property:    -moz-transform, opacity;
+   -ms-transition-property:     -ms-transform, opacity;
+   -o-transition-property:      -o-transform, opacity;
+   transition-property:         transform, opacity;
+}
+
+#filters{  margin-left:0px; }
+
+#filters li{
+   display:inline;
+   padding:0px;
+   background:none;
+}
+
+.portfolio li{
+   display:inline !important;
+   border: 0 !important;
+}
+
+#filters li a, .portfolio li a:hover,
+.portfolio li a:visited {
+	padding: 4px 11px;
+	margin-right: 3px;
+   font-size:13px;
+	font-family: 'Open Sans', sans-serif;
+	color:#fff;
+	background: #2f76d6 !important;
+	border-radius: 3px;
+	border: 1px solid transparent;
+	box-shadow: 0px 0px 3px #000;
+}
+
+#portfolio a, #portfolio a:visited,
+#portfolio a:hover{ text-decoration:none; }
+#filters li a:hover{
+	color:#fff;
+	background:#2f76d6 !important;
+}
+
+#portfolio{ text-align:center; }
+#portfolio .element{
+   margin:12px 12px 0px 0px;
+   padding: 0px;
+}
+
+#portfolio img{
+   width:230px;
+   max-width:230px;
+   height:230px;
+   border:3px solid #fff;
+}
+
+/* PrettyPhoto */
+
+div.ppt {
+   display:none !important;
+}
+
+/* Revolution Slider */
+
+/* Service */
+
+.service-item img {
+	display: inline-block;
+	max-width: 40px;
+	margin-right: 5px;
+}
+
+/* Features */
+
+.feature-item {
+	max-width: 350px;
+	margin: 0 auto;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.feature-item .f-icon {
+	display: block;
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 40px;
+	background: #de0f2e;
+	color: #fff;
+	border-radius: 100px;
+	text-shadow: none;
+}
+
+.feature-item h4 {
+	margin-top: 12px;
+	font-size: 20px
+}
+
+/* Pricing */
+
+.pricing-item{
+	max-width: 300px;
+	margin: 0 auto;
+	margin-top: 15px;
+	border-radius: 6px;
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+	background:#de0f2e;
+	text-align: center;
+	transition: all 0.25s linear;
+	-webkit-transition: all 0.25s linear;
+	-ms-transition: all 0.25s linear;
+	-o-transition: all 0.25s linear;
+	-moz-transition: all 0.25s linear;
+}
+
+.pricing-item:hover{ box-shadow: 0px 0px 10px #000; }
+.pricing-item .price-header{
+	padding-top: 20px;
+	padding-bottom: 15px;
+}
+
+.pricing-item h4{
+	margin: 0;
+	font-size: 32px;
+	color: #fff;
+	text-shadow: none;
+}
+
+.pricing-item span.pitem-price{
+	position: relative;
+	top: -3px;
+	display: inline-block;
+	padding: 5px 7px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	background: rgba(0,0,0,0.15);
+	border-radius: 5px;
+}
+
+.pricing-item span.pitem-price span{
+	font-size: 18px;
+}
+
+.pricing-item ul{ margin: 0; }
+.pricing-item ul li{
+	margin: 0;
+	padding: 14px 0;
+	padding-left: 40px;
+	font-size: 15px;
+	color: #777;
+	border-bottom: 1px dashed #ddd;
+	background: #f4ebd2;
+	text-align: left;
+}
+.pricing-item ul li:last-child { border-bottom: 0; }
+.pricing-item ul li i{
+	position: relative;
+	top: -3px;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	font-size: 12px;
+	background:#de0f2e;
+	border-radius: 30px;
+	color: #fff;
+}
+
+.pricing-item a.btn, .pricing-item a.btn:hover,
+.pricing-item a.btn:active, .pricing-item a.btn:focus{
+	margin: 20px 0;
+	color: #555;
+	border: 1px solid #aaa;
+}
+
+/* Footer */
+
+footer{
+	margin-top:25px;
+	font-size:16px;
+	font-weight:700;
+	line-height:30px;
+	background:#de0f2e;
+	padding:20px 10px;
+	border-top:5px solid #b40b24;
+	text-shadow:0px 0px 1px #000;
+	box-shadow:0px -1px 5px #000;
+}
+
+footer p{
+margin:0px;
+}
+
+footer a, footer a:visited{
+border:none;
+font-weight:700;
+border-bottom:1px dashed #f4ebd2;
+}
+
+footer .socials{
+margin:10px 0px 0px 0px;
+}
+
+footer .socials a, footer .socials a:visited{
+border:none;
+font-size:15px;
+text-shadow:none;
+margin:5px 3px;
+}
+
+footer .socials i{
+display:inline-block;
+height:40px;
+width:40px;
+background:#b40b24;
+line-height:35px;
+text-align:center;
+border-radius:50px;
+border:2px solid #f4ebd2;
+box-shadow:0px 0px 2px #333;
+}
+
+
+/* Scroll to top */
+
+.totop {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	z-index: 104400;
+}
+
+.totop a i{
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 25px;
+	background: #f4f4f4;
+	border-radius: 6px;
+}
+
+.totop a, .totop a:visited,
+.totop a:hover {
+	color: #2f76d6;
+	text-decoration: none;
+}
+
+
+/* Responsive */
+
+@media (max-width: 480px){
+	.container{
+		width:100%;
+	}
+   body{
+   font-size:22px;
+   line-height:35px;
+   padding-top:30px !important;
+   }
+   h1{
+   font-size:40px;
+   line-height:45px;
+   }
+   h2{
+   font-size:35px;
+   line-height:40px;
+   }
+   h3{
+   font-size:28px;
+   line-height:32px;
+   }
+   h4{
+   font-size:23px;
+   line-height:28px;
+   }
+   footer{
+   text-align:center;
+   }
+   .pics{
+   text-align:center;
+   }
+   .pics img{
+   max-width:100% !important;
+   }     
+   .all h3, .all p{
+   text-align:center;
+   }
+}
+
+@media (max-width: 767px){
 	
-		<div id="container2">
-		   <!-- Header -->
-		   <header>
-			  <div class="row">
-			  
-				<div class="col-md-0 col-sm-0">
-					<div class="hidden-xs">
-					   <div class="lnav">
-						  <!-- Left navigation. Replace # with links -->
-						  <!--<a href="aboutus.html">About Us</a> 
-						  <a href="careers.html">Careers</a> 
-						  <a href="services.html">Services</a>-->
-					   </div>
-					</div>
-				 </div>
-				 <div class="col-md-12 col-sm-12">
-					<!-- Logo -->
-					<div class="logo">
-					   <div class="name">
-						Happy Birthday
-						<br>💙
-						 <!-- <p class="stars"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></p>-->
-						  <!-- Replace # with your site link. Replace "Alejandra" with your site name. -->
-						 <!-- <p class="namey"><b><a href="index.html">Alejandra</a></b></p>
-						  <p class="stars"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></p>-->
-					   </div>
-					</div>
-				 </div>
-				 <div class="col-md-0 col-sm-0">
-					<div class="rnav">
-					   <div class="mobily visible-xs">
-			  
-					   </div>
-					   <!-- Right navigation. Replace # with links -->
-					   <!--<a href="portfolio.html">Portfolio</a> 
-					   <a href="blog.html">Blog</a> 
-					   <a href="contactus.html">Contact Us</a>-->
-					</div>
-				 </div>
-			  </div>
-		   </header>
-			
-			<!-- Services  -->
-			<!-- Default Block Heading -->
-			<div class="default-heading">
-				<div class="row">
-					<div class="col-md-12 col-sm-8">
-						<!-- Service para -->
-						<h4 class="caps">// BEGIN BRIEF SRSFACE TIME</h4>
-						<p class="small arial">To the Danny to my Arin, the Lion to my Scorpion, the Reformed Sinnamon Roll to my Cinnamon Roll, the Frustratingly Confident Prince to my Violent-Tempered Tavern Worker, but most importantly, one of the greatest people I've been able to get to know. When I first met you, I was charmed by your humor, intimidated by your wit and intelligence, and enthralled by the character that mine was getting to know. Not much has changed since then, other than my increase in appreciation for the person I've learned was behind that increasingly disturbing <i>(in a good way!)</i> snark and banter.</p>
-						
-						<p class="small arial">I have always respected just how human you are, and your refusal to hide this. You own up to your past mistakes, you've learned and moved on from them. Your honesty with me has been refreshing, and your tendency to make the effort to show you care even when it feels like no one does has been uplifting. You're one of my closest friends, not because of what you bring to the table (although you bring quite a lot), but because of who you are.</p>
-						
-						<p class="small arial">You've seen the uglier parts of me and instead of making excuses for them or running away from them, you've admitted that they're flaws. You've been a friend in spite of them, and it's always meant the world to me that even at our harder moments, once we've had time to calm and think, you've helped me to remember a healthier way to work out issues and disagreements with the people around me.</p>
-						
-						<p class="small arial">Thank you for letting me get to know you, for continuing to let me get to know you. Thank you for all the times you've been there, and even the times you knew you couldn't or shouldn't be. Thank you for letting me see even just a glimpse of the talent you possess and for reminding me to see things from other viewpoints.</p>
-						
-						<p class="small arial">All I ask right now is that you please try not to forget what you mean to the people around you. I can't speak for everyone else, but I adore you. And if the need to remind you of this ever rises, I'll be more than happy to do that, because dammit, I want to help you remember. I'll stubbornly be here, even on those days or weeks when you go quiet.</p>
-						<div class="small arial" align="right">♥<br>Jess</div>
-						
-						<h4 class="caps">// END BRIEF SRSFACE TIME</h4>
-					</div>
-				</div>
-			</div>
-			<hr />
-			
-						<div class="flexslider">
-				<img src="Watermelon.png" style="width: 100%;">
-			</div>
-			
-			<!-- Slider End -->
-			
-			<hr /><!-- Horizontal Line -->
-			
-			
-			<div class="row">
-				<div class="col-md-12 col-sm-12">
-					<!-- Portfolio -->
-		   <div class="portfolio">
-			  <div class="row">
-				 <div class="col-md-12 col-sm-12">
-					<!-- Portfolio title -->
-					<h2>Your Quote Quilt</h2>
-				 </div>
-				 <div class="col-md-12 col-sm-12">
-					<!-- Portfolio para -->
-					<p>Now semi-organized into categories! ... Kinda. Also, remember Shia? Pepperidge Farm remembers. </p>
-				 </div>
-			  </div>
+	.service-item,
+	.panel-group {
+		max-width: 350px;
+		margin: 0 auto;
+	}
+	
+	.img-portfolio {
+		max-width: 500px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.contact { max-width: 350px; margin: 0 auto; }
+	.ser h3 { text-align: center; }
+	.container{ width:100%;	}
+	
+   body{
+   padding-top:30px !important;
+   }
+   
+   .pics img{
+   max-width:200px;
+   } 
+   .aboutus{
+   text-align:center;
+   }
+   .staffs{
+	width:250px;
+	margin:0px auto;
+   }
+   .logo{
+	text-align:center;
+   }
+   
+   /* Flexslider */
+   
+   .flexslider li.slide-one .slide-content{
+		max-width:300px;
+		margin:0 auto;
+		text-align:center;
+		padding:20px 0px;
+   }
+   
+   	.flexslider .slide-one-content h3{
+		font-size:30px;
+		line-height:45px;
+	}
 
-			  <div class="photos">
-				 <div class="row">
-					<div class="col-md-12">
-							<div class="img-portfolio">
-							<p>
-								<!-- Add filter names inside "data-filter". For example ".web-design", ".seo", etc., Filter names are used to filter the below images. -->
-								   <ul id="filters">
-									 <li><a href="#" data-filter="*" class="btn">All</a></li>
-									 <li><a href="#" data-filter=".one" class="btn">Dicks/Sexuality</a></li>
-									 <li><a href="#" data-filter=".two" class="btn">Bestiality</a></li>
-									 <li><a href="#" data-filter=".three" class="btn">Why We're Going to Hell</a></li>
-									 <li><a href="#" data-filter=".four" class="btn">RP Sass</a></li>
-									 <li><a href="#" data-filter=".five" class="btn">Misc</a></li>
-								   </ul>
-							</p>
-								
-								
-							<div id="portfolio">
-								<!-- Add the above used filter names inside div tag. You can add more than one filter names. For image lightbox you need to include "a" tag pointing to image link, along with the class "prettyphoto". -->  								
-							   <div class="element five"><a href="dorysushichef.png" class="prettyphoto">
-								   <img src="dorysushichef.png" alt=""/>
-													   
-							   </a></div>
-							   
-							   <div class="element one"><a href="timhortonsgenitals.png" class="prettyphoto">
-								   <img src="timhortonsgenitals.png" alt=""/>
-													   
-							   </a></div>
-							   
-							   <div class="element five"><a href="manpillowbeast.png" class="prettyphoto">
-								   <img src="manpillowbeast.png" alt=""/>
-								   <!-- Portfolio caption -->
-								  
-							   </a></div>
-							   <div class="element four"><a href="kissingchicken.png" class="prettyphoto">
-								   <img src="kissingchicken.png" alt=""/>
-													   
-							   </a></div>
-							   <div class="element five"><a href="potatoes.png" class="prettyphoto">
-								   <img src="potatoes.png" alt=""/>
-														 
-							   </a></div>
-							   <div class="element five"><a href="spacechinese.png" class="prettyphoto">
-								   <img src="spacechinese.png" alt=""/>
-													   
-							   </a></div>
-							   <div class="element five"><a href="miserycoaster.png" class="prettyphoto">
-								   <img src="miserycoaster.png" alt=""/>
-														   
-							   </a></div> 
-							   <div class="element three"><a href="hailsatan.png" class="prettyphoto">
-								   <img src="hailsatan.png" alt=""/>
-														
-							   </a></div> 
-							   <div class="element two three"><a href="fuckthatturtle.png" class="prettyphoto">
-								   <img src="fuckthatturtle.png" alt=""/>
-								   
-								</a></div>
-														   
-							   <div class="element one"><a href="hadntnoticed.png" class="prettyphoto">
-								   <img src="hadntnoticed.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element one"><a href="hypergay.png" class="prettyphoto">
-								   <img src="hypergay.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element three"><a href="genocide.png" class="prettyphoto">
-								   <img src="genocide.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="notenoughdrugs.png" class="prettyphoto">
-								   <img src="notenoughdrugs.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="spurbutt.png" class="prettyphoto">
-								   <img src="spurbutt.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element two"><a href="bestiality.png" class="prettyphoto">
-								   <img src="bestiality.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="makingpeoplecringe.png" class="prettyphoto">
-								   <img src="makingpeoplecringe.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element three five"><a href="onfire.png" class="prettyphoto">
-								   <img src="onfire.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="darklordgoogle.png" class="prettyphoto">
-								   <img src="darklordgoogle.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element four"><a href="theonionsiamcutting.png" class="prettyphoto">
-								   <img src="theonionsiamcutting.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element one"><a href="meatflute.png" class="prettyphoto">
-								   <img src="meatflute.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element two"><a href="hotavianass.png" class="prettyphoto">
-								   <img src="hotavianass.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="immediatefapping.png" class="prettyphoto">
-								   <img src="immediatefapping.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element three"><a href="masswarovaries.png" class="prettyphoto">
-								   <img src="masswarovaries.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element two three"><a href="fuckhisfish.png" class="prettyphoto">
-								   <img src="fuckhisfish.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element one"><a href="surprisehumps.png" class="prettyphoto">
-								   <img src="surprisehumps.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="mailboxmurder.png" class="prettyphoto">
-								   <img src="mailboxmurder.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="snotyou.png" class="prettyphoto">
-								   <img src="snotyou.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element four"><a href="fearboner.png" class="prettyphoto">
-								   <img src="fearboner.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element four"><a href="visiblenipplerings.png" class="prettyphoto">
-								   <img src="visiblenipplerings.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element one"><a href="allthings.png" class="prettyphoto">
-								   <img src="allthings.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element one"><a href="mahdick.png" class="prettyphoto">
-								   <img src="mahdick.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element three five"><a href="methsatan.png" class="prettyphoto">
-								   <img src="methsatan.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="cookingbacon.png" class="prettyphoto">
-								   <img src="cookingbacon.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element one"><a href="dickheart.png" class="prettyphoto">
-								   <img src="dickheart.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element one"><a href="dickmagnet.png" class="prettyphoto">
-								   <img src="dickmagnet.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="catfather.png" class="prettyphoto">
-								   <img src="catfather.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="yoshiseduction.png" class="prettyphoto">
-								   <img src="yoshiseduction.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="eyejazz.png" class="prettyphoto">
-								   <img src="eyejazz.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="dirtyforeheadrube.png" class="prettyphoto">
-								   <img src="dirtyforeheadrube.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="garybuseyraccoonfights.png" class="prettyphoto">
-								   <img src="garybuseyraccoonfights.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="bitchbetterwait.png" class="prettyphoto">
-								   <img src="bitchbetterwait.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="fuckyourbrainup.png" class="prettyphoto">
-								   <img src="fuckyourbrainup.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element one"><a href="shaftwithfourheads.png" class="prettyphoto">
-								   <img src="shaftwithfourheads.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   <div class="element five"><a href="vaguelybritishsass.png" class="prettyphoto">
-								   <img src="vaguelybritishsass.png" alt=""/>
-														 
-							   </a></div>
-							   
-							   
-							</div>
-					   </div>
-					</div>
-				 </div>
-			  </div>
-		   </div>
-				</div>
-			</div>
-			
+	.flexslider .slide-one-content p{
+		display:none;
+	}
 
-		</div>	
+	.flexslider .slide-one-img img{
+		margin-top:20px;
+	}	
+  
+  
+	.flexslider li.slide-two .slide-content{
+		padding:50px;
+		text-align:center;
+	}
 
+	.flexslider li.slide-two .slide-content h3{
+		font-size:40px;
+		line-height:47px;
+	}
+
+	.flexslider li.slide-two .slide-content p{
+		font-size:22px;
+		line-height:38px;
+	}
+	
+   
+}
+
+@media (min-width: 768px) and (max-width: 979px){
+	.container{
+		width:100%;
+	}
+
+   body{
+   padding-top:30px !important;
+   }
+   .pics img{
+   max-width:200px;
+   }
+   
+   /* Flex Sldier */
+   
+	.flexslider .slide-one-content h3{
+		font-size:30px;
+		line-height:45px;
+	}
+
+	.flexslider .slide-one-content p{
+		font-size:13px;
+	}
+
+	.flexslider .slide-one-img img{
+		max-width:350px;
+	}	
 		
-		<!-- Scroll to top -->
-		<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span> 
-			
-		
-		<!-- Javascript files -->
-		<!-- jQuery -->
-		<script src="js/jquery.js"></script>
-		<!-- Bootstrap JS -->
-		<script src="js/bootstrap.min.js"></script>
-		<!-- FlexSlider JS -->
-		<script src="js/jquery.flexslider.js"></script>
-		<!-- Isotope and Pretty Photo JS -->
-		<script src="js/jquery.prettyPhoto.js"></script>
-		<script src="js/isotope.js"></script>
-		<!-- Respond JS for IE8 -->
-		<script src="js/respond.min.js"></script>
-		<!-- HTML5 Support for IE -->
-		<script src="js/html5shiv.js"></script>
-		<!-- Custom JS -->
-		<script src="js/custom.js"></script>
-		<!-- This Page JS -->
-		<script>
-			$(window).load(function(){
-				$('.flexslider').flexslider({
-					animation:"slide",
-					controlNav:false,
-					slideshowSpeed:10000
-				});
-			});
-		</script>
-	</body>	
-</html>
+	.flexslider li.slide-two .slide-content{
+		padding:60px;
+		text-align:center;
+	}
+
+	.flexslider li.slide-two .slide-content h3{
+		font-size:45px;
+		line-height:52px;
+	}
+
+	.flexslider li.slide-two .slide-content p{
+		font-size:26px;
+		line-height:45px;
+	}
+	
+}
+
+@media (max-width: 979px){
+
+}
